@@ -18,8 +18,8 @@ describe('Central de Atendimento ao Cliente TAT', function() {
         cy.title().should('be.equal', 'Central de Atendimento ao Cliente TAT')
     })
 
-    
-    it.only('preenche os campos obrigatórios e envia o formulário', function() {
+    //it.only executa só o selecionado
+    it('preenche os campos obrigatórios e envia o formulário', function() {
 
         const longText= 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae nunc sed velit dignissim. Ut venenatis tellus in metus vulputate eu scelerisque felis. Turpis massa tincidunt dui ut ornare lectus sit amet est. Pretium fusce id velit ut tortor pretium viverra suspendisse. Purus sit amet luctus venenatis lectus. In cursus turpis massa tincidunt. Fermentum iaculis eu non diam phasellus vestibulum lorem sed risus. Nulla facilisi cras fermentum odio eu feugiat pretium nibh. A diam sollicitudin tempor id eu nisl nunc. Facilisi cras fermentum odio eu feugiat.'
         
@@ -82,4 +82,40 @@ describe('Central de Atendimento ao Cliente TAT', function() {
         cy.get('.success').should('be.visible')
     })
 
-  })
+    it('seleciona um produto (YouTube) por seu texto', function () {
+        cy.get('#product').select('YouTube') // Seleção pelo texto
+        cy.get('#product').should('have.value', 'youtube')
+    })
+
+    it('seleciona um produto (Mentoria) por seu valor (value)', function () {
+        cy.get('#product').select('mentoria') // Seleção pelo value
+        cy.get('#product').should('have.value', 'mentoria')
+    })
+
+    it('seleciona um produto (Blog) por seu índice', function () {
+        cy.get('#product').select(1) // Seleção pelo indice
+        cy.get('#product').should('have.value', 'blog')
+    })
+    
+    it('seleciona um produto aleatorio no dropdown', () => {
+        cy.get('select option').its('length' , { log: false }).then(n => {
+            cy.get('select').select(Cypress._.random(n-1))
+        })
+    })
+
+    it('marca o tipo de atendimento "Feedback"', () => {
+        cy.get('input[type="radio"][value="feedback"]')
+        .check()
+        .should('have.value', 'feedback')
+    })
+
+    it('marca cada tipo de atendimento', () => {
+        cy.get('input[type="radio"]')
+        .should('have.length', 3)
+        .each(function ($radio) {
+            cy.wrap($radio).check()
+            cy.wrap($radio).should('be.checked')
+        })
+    })
+
+})
