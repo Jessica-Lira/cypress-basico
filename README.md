@@ -1,8 +1,8 @@
 # Testes automatizados com Cypress - Básico
 
 
-Sample project for the basic course of the [**Talking About Testing online school**](https://udemy.com/user/walmyr) with Continuous Integration (CI) using GitHub Actions.
-<p> [Lessons](./lessons/_course-structure_.md). </p>
+<p>Sample project for the basic course of the [**Talking About Testing online school**](https://udemy.com/user/walmyr) with Continuous Integration (CI) using GitHub Actions.</p>
+[Lessons](./lessons/_course-structure_.md). 
 
 ## Pre-requirements
 
