@@ -1,8 +1,8 @@
 # Testes automatizados com Cypress - Básico
 
 
-Sample project for the basic course of the Talking About Testing online school.
-[Lessons](./lessons/_course-structure_.md).
+Sample project for the basic course of the [**Talking About Testing online school**](https://udemy.com/user/walmyr).
+<p>[Lessons](./lessons/_course-structure_.md).</p>
 
 ## Pre-requirements
 
@@ -29,7 +29,3 @@ Or, run `npm run cy:open` to open Cypress in interactive mode on a desktop viewp
 Run `npm test:mobile` to run the test in headless mode on a mobile viewport.
 
 Or, run `npm run cy:open:mobile` to open Cypress in interactive mode on a mobile viewport.
-
-___
-
-Projeto realizado ao assisitir o curso da [**Escola Talking About Testing**](https://udemy.com/user/walmyr).
