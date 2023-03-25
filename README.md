@@ -2,7 +2,7 @@
 
 
 Sample project for the basic course of the [**Escola Talking About Testing**](https://udemy.com/user/walmyr) with Continuous Integration (CI) using GitHub Actions.
-- [**Lessons**](./lessons/_course-structure_.md). 
+- [**Lessons**](./lessons). 
 
 ## Pre-requirements
 
